@@ -1,27 +1,14 @@
-Feature: Test how clicks are handled on a certain element
-    As a developer
-    I want to be able to test how (double) clicks are handled by certain elements
+Feature: Click Menu Feature
+  Test link of menu
+  I want link have the correct page
 
-    Background:
-        Given I open the site "/"
+  Background:
+    Given I open the url "http://beta.greenglobal.vn/"
 
-    Scenario: Single click on a link should navigate to another page
-        When  I click on the link "Navigate to example.com"
-        Then  I expect the url to contain "https://example.com"
+  Scenario: Click the link on the menu
+    When I click on the link "HOME"
+    Then I expect the url to contain "http://beta.greenglobal.vn/"
 
-    @Isolate
-    Scenario: Single click on the button #toggleMessage should display an message
-        When  I click on the button "#toggleMessage"
-        Then  I expect that element "#message1" is visible
-        And   I expect that element "#message2" is not visible
-
-    Scenario: Double click on the button #toggleMessage should display another message
-        When  I doubleclick on the button "#toggleMessage"
-        Then  I expect that element "#message1" is not visible
-        And   I expect that element "#message2" is visible
-
-    Scenario: Single click on the element #toggleBackground should make the elemnt red
-        When  I click on the element "#toggleBackground"
-
-    Scenario: Double click on the element #toggleBackground should make the elemnt blue
-        When  I doubleclick on the element "#toggleBackground"
+  Scenario: Click the link on the menu to OUR WORK page.
+    When I click on the link "OUR WORK"
+    Then I expect the url to contain "http://beta.greenglobal.vn/our-work/"
